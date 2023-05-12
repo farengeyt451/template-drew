@@ -28,6 +28,12 @@ body {
   text-align: center;
 }
 
+.c_url {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .c_url__form {
   display: flex;
   flex-direction: column;
@@ -36,7 +42,7 @@ body {
 .c_url__group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   padding: 20px;
   margin-top: 20px;
   border: none;
@@ -64,6 +70,10 @@ body {
   border-radius: 7px;
 }
 
+.c_url__input--result {
+  height: 200px;
+}
+
 .c_url__btn {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -88,12 +98,16 @@ body {
 .c_url__btn--submit {
   display: block;
   padding: 8px;
-  min-width: 634px;
+  min-width: 740px;
 }
 
 .c_url__btn--action {
   min-width: 170px;
   margin-left: 20px;
+}
+
+.c_url__btn--clear {
+  margin-left: 25px;
 }
 
 @media (prefers-color-scheme: light) {

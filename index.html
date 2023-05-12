@@ -13,8 +13,154 @@
     />
     <title>Start SPA</title>
   </head>
+
   <body>
-    <div id="app"></div>
+    <div class="c_url">
+      <form
+        class="c_url__form"
+        id="url-concat"
+      >
+        <fieldset class="c_url__group">
+          <label
+            class="c_url__label"
+            for="localhost"
+            >localhost name</label
+          >
+          <input
+            class="c_url__input"
+            type="text"
+            id="localhost"
+            name="localhost"
+            value="localhost"
+            required
+          />
+          <button
+            class="c_url__btn c_url__btn--clear"
+            aria-label="clear"
+            data-input="localhost"
+          >
+            Clear
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group">
+          <label
+            class="c_url__label"
+            for="port"
+            >port</label
+          >
+          <input
+            class="c_url__input"
+            type="text"
+            id="port"
+            name="port"
+            value="4200"
+            required
+          />
+          <button
+            class="c_url__btn c_url__btn--clear"
+            aria-label="clear"
+            data-input="port"
+          >
+            Clear
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group">
+          <label
+            class="c_url__label"
+            for="providerId"
+            >providerId</label
+          >
+          <input
+            class="c_url__input"
+            type="text"
+            id="providerId"
+            name="providerId"
+            required
+          />
+          <button
+            class="c_url__btn c_url__btn--clear"
+            aria-label="clear"
+            data-input="providerId"
+          >
+            Clear
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group">
+          <label
+            class="c_url__label"
+            for="token"
+            >auth-token</label
+          >
+          <input
+            class="c_url__input"
+            type="text"
+            id="token"
+            name="token"
+            required
+          />
+          <button
+            class="c_url__btn c_url__btn--clear"
+            aria-label="clear"
+            data-input="token"
+          >
+            Clear
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group c_url__group--submit">
+          <button
+            class="c_url__btn c_url__btn--submit"
+            aria-label="submit"
+            type="submit"
+          >
+            Concat
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group">
+          <label
+            class="c_url__label"
+            for="result"
+            >result</label
+          >
+          <textarea
+            class="c_url__input c_url__input--result"
+            type="text"
+            id="result"
+            name="result"
+          ></textarea>
+          <button
+            class="c_url__btn c_url__btn--clear"
+            aria-label="clear"
+            data-input="result"
+          >
+            Clear
+          </button>
+        </fieldset>
+
+        <fieldset class="c_url__group c_url__group--actions">
+          <button
+            class="c_url__btn c_url__btn--action"
+            aria-label="copy-to-clipboard"
+            type="button"
+            id="copy"
+          >
+            Copy to clipboard
+          </button>
+          <button
+            class="c_url__btn c_url__btn--action"
+            aria-label="open"
+            type="button"
+            id="open"
+          >
+            Open in new tab
+          </button>
+        </fieldset>
+      </form>
+    </div>
     <script
       type="module"
       src="/src/main.ts"

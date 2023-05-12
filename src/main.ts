@@ -1,53 +1,13 @@
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<div class="c_url">
-  <form class="c_url__form" id="url-concat">
-    <fieldset class="c_url__group">
-      <label class="c_url__label" for="localhost">localhost name</label>
-      <input class="c_url__input" type="text" id="localhost" name="localhost" value="localhost" required />
-    </fieldset>
-
-    <fieldset class="c_url__group">
-      <label class="c_url__label" for="port">port</label>
-      <input class="c_url__input" type="text" id="port" name="port" value="4200" required />
-    </fieldset>
-
-    <fieldset class="c_url__group">
-      <label class="c_url__label" for="providerId">providerId</label>
-      <input class="c_url__input" type="text" id="providerId" name="providerId" required />
-    </fieldset>
-
-    <fieldset class="c_url__group">
-      <label class="c_url__label" for="token">auth-token</label>
-      <input class="c_url__input" type="text" id="token" name="token" required />
-    </fieldset>
-
-    <fieldset class="c_url__group c_url__group--submit">
-      <button class="c_url__btn c_url__btn--submit" aria-label="submit" type="submit">Concat</button>
-    </fieldset>
-
-    <fieldset class="c_url__group">
-      <label class="c_url__label" for="result">result</label>
-      <input class="c_url__input" type="text" id="result" name="result" />
-    </fieldset>
-
-    <fieldset class="c_url__group c_url__group--actions">
-      <button class="c_url__btn c_url__btn--action" aria-label="copy-to-clipboard" type="button" id="copy">
-        Copy to clipboard
-      </button>
-      <button class="c_url__btn c_url__btn--action" aria-label="open" type="button" id="open">Open in new tab</button>
-    </fieldset>
-  </form>
-</div>
-`;
+let resultUrl: string;
 
 const inputResult = document.querySelector<HTMLInputElement>('#result')!;
 const form = document.querySelector<HTMLFormElement>('#url-concat')!;
+const textareaResult = document.querySelector<HTMLFormElement>('#result')!;
 const btnCopy = document.querySelector<HTMLFormElement>('#copy')!;
 const btnOpen = document.querySelector<HTMLFormElement>('#open')!;
-
-let resultUrl: string;
+const btnClear = document.querySelectorAll<HTMLFormElement>('.c_url__btn--clear')!;
 
 const formHandler = (event: SubmitEvent) => {
   event.preventDefault();
@@ -73,6 +33,7 @@ const copyContent = async () => {
     setTimeout(() => {
       btnCopy.innerText = 'Copy to clipboard';
     }, 1000);
+    clearResult();
   }
 };
 
@@ -80,8 +41,24 @@ const openInNewTab = () => {
   if (!resultUrl) return;
 
   window.open(resultUrl, '_blank');
+  clearResult();
 };
+
+const clearInput = (event: MouseEvent) => {
+  event.preventDefault();
+  const inputId = (event.target as HTMLElement).attributes.getNamedItem('data-input')?.value;
+  const input = inputId && document.getElementById(inputId);
+
+  if (input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement) {
+    input.value = '';
+  }
+};
+
+const clearResult = () => {
+  textareaResult.value = '';
+}
 
 form.addEventListener('submit', formHandler);
 btnCopy.addEventListener('click', copyContent);
 btnOpen.addEventListener('click', openInNewTab);
+btnClear.forEach(btn => btn.addEventListener('click', clearInput));
