@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <link
@@ -15,155 +16,115 @@
   </head>
 
   <body>
-    <div class="c_url">
+    <div class="c_int">
+
+      <!-- Form -->
+
       <form
-        class="c_url__form"
-        id="url-concat"
+        class="c_int__form"
+        id="int-form"
       >
-        <fieldset class="c_url__group">
-          <label
-            class="c_url__label"
-            for="localhost"
-            >localhost name</label
-          >
-          <input
-            class="c_url__input"
-            type="text"
-            id="localhost"
-            name="localhost"
-            value="localhost"
-            required
-          />
-          <button
-            class="c_url__btn c_url__btn--clear"
-            aria-label="clear"
-            data-input="localhost"
-          >
-            Clear
-          </button>
-        </fieldset>
 
-        <fieldset class="c_url__group">
-          <label
-            class="c_url__label"
-            for="port"
-            >port</label
-          >
-          <input
-            class="c_url__input"
-            type="text"
-            id="port"
-            name="port"
-            value="4200"
-            required
-          />
-          <button
-            class="c_url__btn c_url__btn--clear"
-            aria-label="clear"
-            data-input="port"
-          >
-            Clear
-          </button>
-        </fieldset>
+        <!-- Template -->
 
-        <fieldset class="c_url__group">
+        <fieldset class="c_int__group">
           <label
-            class="c_url__label"
-            for="providerId"
-            >providerId</label
+            class="c_int__label"
+            for="int-template"
           >
-          <input
-            class="c_url__input"
-            type="text"
-            id="providerId"
-            name="providerId"
-            required
-          />
-          <button
-            class="c_url__btn c_url__btn--clear"
-            aria-label="clear"
-            data-input="providerId"
-          >
-            Clear
-          </button>
-        </fieldset>
+            Template
+          </label>
 
-        <fieldset class="c_url__group">
-          <label
-            class="c_url__label"
-            for="token"
-            >auth-token</label
-          >
-          <input
-            class="c_url__input"
-            type="text"
-            id="token"
-            name="token"
-            required
-          />
-          <button
-            class="c_url__btn c_url__btn--clear"
-            aria-label="clear"
-            data-input="token"
-          >
-            Clear
-          </button>
-        </fieldset>
-
-        <fieldset class="c_url__group c_url__group--submit">
-          <button
-            class="c_url__btn c_url__btn--submit"
-            aria-label="submit"
-            type="submit"
-          >
-            Concat
-          </button>
-        </fieldset>
-
-        <fieldset class="c_url__group">
-          <label
-            class="c_url__label"
-            for="result"
-            >result</label
-          >
           <textarea
-            class="c_url__input c_url__input--result"
-            type="text"
-            id="result"
-            name="result"
-          ></textarea>
-          <button
-            class="c_url__btn c_url__btn--clear"
-            aria-label="clear"
-            data-input="result"
+            class="c_int__textarea"
+            id="int-template"
+            aria-label="code"
           >
-            Clear
-          </button>
+          </textarea>
         </fieldset>
 
-        <fieldset class="c_url__group c_url__group--actions">
-          <button
-            class="c_url__btn c_url__btn--action"
-            aria-label="copy-to-clipboard"
-            type="button"
-            id="copy"
+        <!-- String -->
+
+        <fieldset class="c_int__group">
+          <label
+            class="c_int__label"
+            for="int-string"
           >
-            Copy to clipboard
-          </button>
-          <button
-            class="c_url__btn c_url__btn--action"
-            aria-label="open"
-            type="button"
-            id="open"
+            String
+          </label>
+
+          <div class="c_int__wrapper">
+            <input
+              class="c_int__input c_int__input--string"
+              type="text"
+              id="int-string"
+              name="int-string"
+              placeholder="927 Gallatin Ave, Nashville, TN 37206, United States"
+              required
+            />
+
+            <button
+              class="c_int__btn c_int__btn--clear"
+              aria-label="clear"
+              data-input="int-string"
+              type="button"
+            >
+              Clear
+            </button>
+
+            <button
+              class="c_int__btn c_int__btn--submit"
+              aria-label="submit"
+              type="submit"
+            >
+              Interpolate
+            </button>
+          </div>
+        </fieldset>
+
+        <!-- Result -->
+
+        <fieldset class="c_int__group">
+          <label
+            class="c_int__label"
+            for="result"
           >
-            Open in new tab
-          </button>
+            Result
+          </label>
+
+          <div class="c_int__wrapper c_int__wrapper--res">
+            <textarea
+              class="c_int__textarea"
+              id="int-result"
+              aria-label="result"
+            >
+          </textarea>
+
+            <button
+              class="c_int__btn c_int__btn--clear"
+              aria-label="clear"
+              data-input="int-result"
+              type="button"
+            >
+              Clear
+            </button>
+
+            <button
+              class="c_int__btn c_int__btn--copy"
+              aria-label="copy"
+              type="button"
+            >
+              Copy
+            </button>
+          </div>
         </fieldset>
       </form>
     </div>
+
     <script
       type="module"
       src="/src/main.ts"
     ></script>
   </body>
+
 </html>

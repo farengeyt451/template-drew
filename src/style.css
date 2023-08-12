@@ -15,31 +15,25 @@
 }
 
 body {
-  margin: 0;
   display: flex;
+  margin: 0;
   min-width: 320px;
   min-height: 100vh;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.c_url {
+.c_int {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-.c_url__form {
+.c_int__form {
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
 
-.c_url__group {
+.c_int__group {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -48,66 +42,75 @@ body {
   border: none;
 }
 
-.c_url__group--submit {
-  justify-content: flex-end;
+.c_int__wrapper {
+  display: flex;
+  width: 100%;
+  margin-left: 30px;
+  align-items: center;
 }
 
-.c_url__group--actions {
-  justify-content: flex-end;
+.c_int__wrapper--res {
+  margin-left: 0;
 }
 
-.c_url__label {
+.c_int__label {
   font-size: 18px;
   font-weight: 500;
+  width: 100px;
 }
 
-.c_url__input {
+.c_int__textarea {
+  display: flex;
+  padding: 14px 24px;
+  width: 100%;
+  min-height: 250px;
+  font-size: 16px;
+  line-height: 1.4;
+  border: 2px solid cornflowerblue;
+  border-radius: 7px;
+  margin-left: 30px;
+}
+
+.c_int__input {
   padding: 15px;
-  margin-left: 50px;
   font-size: 18px;
-  min-width: 600px;
   border: 2px solid cornflowerblue;
   border-radius: 7px;
 }
 
-.c_url__input--result {
-  height: 200px;
+.c_int__input--string {
+  flex-grow: 1;
 }
 
-.c_url__btn {
+.c_int__btn {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 8px 12px;
+  font-size: 16px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  min-width: 120px;
+  margin-left: 25px;
 }
 
-.c_url__btn:hover {
+.c_int__btn:hover {
   background-color: #646cff;
 }
 
-.c_url__btn:focus,
-.c_url__btn:focus-visible {
+.c_int__btn:focus,
+.c_int__btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.c_url__btn--submit {
-  display: block;
-  padding: 8px;
-  min-width: 740px;
+.c_int__btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.c_url__btn--action {
-  min-width: 170px;
-  margin-left: 20px;
-}
-
-.c_url__btn--clear {
-  margin-left: 25px;
+.c_int__btn[disabled]:hover {
+  background-color: #747bff;
 }
 
 @media (prefers-color-scheme: light) {
@@ -116,7 +119,7 @@ body {
     background-color: #ffffff;
   }
 
-  .c_url__btn {
+  .c_int__btn {
     background-color: #747bff;
     color: #ffffff;
   }
