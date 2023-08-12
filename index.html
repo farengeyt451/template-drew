@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://farengeyt451.github.io/template-drew/vite.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Start SPA</title>
+    <script type="module" crossorigin src="https://farengeyt451.github.io/template-drew/assets/index-c02790be.js"></script>
+    <link rel="stylesheet" href="https://farengeyt451.github.io/template-drew/assets/index-76fb23d6.css">
+  </head>
+
+  <body>
+    <div class="c_int">
+
+      <!-- Form -->
+
+      <form
+        class="c_int__form"
+        id="int-form"
+      >
+
+        <!-- Template -->
+
+        <fieldset class="c_int__group">
+          <label
+            class="c_int__label"
+            for="int-template"
+          >
+            Template
+          </label>
+
+          <textarea
+            class="c_int__textarea"
+            id="int-template"
+            aria-label="code"
+          >
+          </textarea>
+        </fieldset>
+
+        <!-- String -->
+
+        <fieldset class="c_int__group">
+          <label
+            class="c_int__label"
+            for="int-string"
+          >
+            String
+          </label>
+
+          <div class="c_int__wrapper">
+            <input
+              class="c_int__input c_int__input--string"
+              type="text"
+              id="int-string"
+              name="int-string"
+              placeholder="927 Gallatin Ave, Nashville, TN 37206, United States"
+              required
+            />
+
+            <button
+              class="c_int__btn c_int__btn--clear"
+              aria-label="clear"
+              data-input="int-string"
+              type="button"
+            >
+              Clear
+            </button>
+
+            <button
+              class="c_int__btn c_int__btn--submit"
+              aria-label="submit"
+              type="submit"
+            >
+              Interpolate
+            </button>
+          </div>
+        </fieldset>
+
+        <!-- Result -->
+
+        <fieldset class="c_int__group">
+          <label
+            class="c_int__label"
+            for="result"
+          >
+            Result
+          </label>
+
+          <div class="c_int__wrapper c_int__wrapper--res">
+            <textarea
+              class="c_int__textarea"
+              id="int-result"
+              aria-label="result"
+            >
+          </textarea>
+
+            <button
+              class="c_int__btn c_int__btn--clear"
+              aria-label="clear"
+              data-input="int-result"
+              type="button"
+            >
+              Clear
+            </button>
+
+            <button
+              class="c_int__btn c_int__btn--copy"
+              aria-label="copy"
+              type="button"
+            >
+              Copy
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    
+  </body>
+
+</html>
