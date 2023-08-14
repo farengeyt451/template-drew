@@ -6,7 +6,7 @@
   "homepage": "https://github.com/farengeyt451/spa-launcher",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base https://farengeyt451.github.io/spa-launcher/",
+    "build": "tsc && vite build --base https://farengeyt451.github.io/template-drew/",
     "preview": "vite preview"
   },
   "devDependencies": {

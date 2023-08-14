@@ -29,7 +29,7 @@ const formHandler = (event: SubmitEvent) => {
 const interpolate = (template: string) => {
   const templateObj = JSON.parse(template);
   const parsedInput = parseString(intStr.value);
-  return `{
+  const result = `{
   "cc": "${templateObj.cc}",
   "city": "${parsedInput.city}",
   "country": "${parsedInput.country}",
@@ -39,6 +39,10 @@ const interpolate = (template: string) => {
   "state": "${parsedInput.state}",
   "street_address": "${parsedInput.street_address}"
 }`;
+
+  copyContent(result);
+
+  return result;
 };
 
 const parseString = (str: string) => {
@@ -62,9 +66,10 @@ const parseString = (str: string) => {
   };
 };
 
-const copyContent = async () => {
+const copyContent = async (content?: string) => {
   try {
-    await navigator.clipboard.writeText(intResult.value);
+    const contentToCopy = content || intResult.value;
+    await navigator.clipboard.writeText(contentToCopy);
     copyBtn.innerText = 'Done';
     console.log('Content copied to clipboard');
     console.info(`${intResult.value}`);
@@ -98,6 +103,6 @@ function checkForEmptyState() {
 
 inputTemplate.value = TEMPLATE;
 intForm.addEventListener('submit', formHandler);
-copyBtn.addEventListener('click', copyContent);
+copyBtn.addEventListener('click', copyContent.bind(null, ''));
 clearResultBtns.forEach(btn => btn.addEventListener('click', clearInput));
 intResult.addEventListener('input', checkForEmptyState);
